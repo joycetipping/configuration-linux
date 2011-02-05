@@ -1,11 +1,17 @@
 # vim: syntax=sh :
 
+conf="$HOME/projects/configuration"
+
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
+    PATH="$PATH:$HOME/bin"
 fi
 
+# Bash prompt:
+. $conf/bash/prompt
+
 # Exports
+export TERM=xterm-color
 export EDITOR=/usr/bin/vim
 
 # Aliases
@@ -24,38 +30,15 @@ alias u6='cd ../../../../../../'
 alias u7='cd ../../../../../../../'
 alias u8='cd ../../../../../../../../'
 
-alias aliases='vim $HOME/projects/configuration/bash/bash_aliases'
+alias aliases='vim $conf/bash/bash_aliases'
 alias luajit='luajit-2.0.0-beta2'
 alias musings='vim $HOME/projects/musings/2010.txt'
-alias nodedoc='man $HOME/projects/github/nodejs/doc/node.1'
 alias notes='cd $HOME/library/notes/'
 alias vt='vim -t'
 
-# Bash prompt:
-. $HOME/projects/configuration/bash/prompt
-
 # R
 export R_LIBS="$HOME/.R:$R_LIBS"
-
 # Ruby
 alias irbs='irb --simple-prompt'
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
-# Haxe
-export HAXE_LIBRARY_PATH="$HOME/library/programs/haxe/haxe/std:."
-export PATH="$PATH:$HOME/library/programs/haxe/bin"
-
-
-
-# Socialmedia
-alias clients='ssh joyce@clients.socialmedia.com'
-alias flafdoc='evince $HOME/projects/socialmedia/platform/flaf-1.0/framework/docs/developer/dev-guide.pdf'
-
-alias adclient='cd $HOME/projects/socialmedia/adops/adclient/'
-alias adops='cd $HOME/projects/socialmedia/adops/'
-alias ads='cd $HOME/projects/socialmedia/adops/ads/'
-alias hours='vim $HOME/projects/socialmedia/hours/2011/jan.txt'
-alias platform='cd $HOME/projects/socialmedia/platform/'
-alias sm='cd $HOME/projects/socialmedia/'
-alias stax='cd $HOME/projects/socialmedia/platform/stax/'
-alias wiki='cd $HOME/projects/socialmedia/adops/wiki/'
