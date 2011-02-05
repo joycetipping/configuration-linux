@@ -4,19 +4,3 @@
 cd $HOME/projects/configuration/gnome/
 ./gconf apply
 cd
-
-# Set up symlinks
-ln -s $HOME/projects/configuration/vim/vim              $HOME/.vim
-ln -s $HOME/projects/configuration/vim/vimrc            $HOME/.vimrc
-ln -s $HOME/projects/configuration/emacs                $HOME/.emacs
-
-ln -s $HOME/projects/configuration/bash/bashrc          $HOME/.bashrc
-ln -s $HOME/projects/configuration/bash/bash_aliases    $HOME/.bash_aliases
-ln -s $HOME/projects/configuration/bash/profile         $HOME/.profile
-
-ln -s $HOME/projects/configuration/xinitrc              $HOME/.xinitrc
-ln -s $HOME/projects/configuration/texmf-var            $HOME/.texmf-var
-ln -s $HOME/projects/configuration/ssh                  $HOME/.ssh
-ln -s $HOME/projects/configuration/ctags                $HOME/.ctags
-ln -s $HOME/projects/configuration/nodejs/node_modules  $HOME/.node_modules
-ln -s $HOME/projects/configuration/R                    $HOME/.R

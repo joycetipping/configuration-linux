@@ -1,0 +1,20 @@
+#!/bin/bash
+
+conf="$HOME/projects/configuration"
+
+# Set up symlinks
+ln -s $conf/vim/vim              $HOME/.vim
+ln -s $conf/vim/vimrc            $HOME/.vimrc
+ln -s $conf/emacs                $HOME/.emacs
+
+ln -s $conf/bash/bashrc          $HOME/.bashrc
+ln -s $conf/bash/bash_aliases    $HOME/.bash_aliases
+ln -s $conf/bash/bash_profile    $HOME/.bash_profile
+ln -s $conf/bash/profile         $HOME/.profile
+
+ln -s $conf/xinitrc              $HOME/.xinitrc
+ln -s $conf/texmf-var            $HOME/.texmf-var
+ln -s $conf/ssh                  $HOME/.ssh
+ln -s $conf/ctags                $HOME/.ctags
+ln -s $conf/nodejs/node_modules  $HOME/.node_modules
+ln -s $conf/R                    $HOME/.R
