@@ -1,1 +1,0 @@
-/home/joycetipping/projects/github/haxe-vim-highlighter/haxe.vim
