@@ -14,7 +14,6 @@ ln -s $conf/bash/profile         $HOME/.profile
 
 ln -s $conf/xinitrc              $HOME/.xinitrc
 ln -s $conf/texmf-var            $HOME/.texmf-var
-ln -s $conf/ssh                  $HOME/.ssh
 ln -s $conf/ctags                $HOME/.ctags
 ln -s $conf/nodejs/node_modules  $HOME/.node_modules
 ln -s $conf/R                    $HOME/.R
