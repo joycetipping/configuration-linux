@@ -1,5 +1,6 @@
 # vim: syntax=sh :
 
+# Helpful variables:
 conf="$HOME/projects/configuration"
 
 # set PATH so it includes user's private bin if it exists
@@ -13,6 +14,9 @@ fi
 # Exports
 export TERM=xterm-color
 export EDITOR=/usr/bin/vim
+
+# Hacks
+export SSH_AUTH_SOCK=0 # This solves "Agent admitted failure to sign using the key." bug in ssh-copy-id.
 
 # Aliases
 alias cpl='cp -d'
