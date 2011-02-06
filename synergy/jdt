@@ -1,0 +1,11 @@
+section: screens
+  rose:
+  jdt20090421.spencertipping.com:
+end
+
+section: links
+  rose:
+    up(0,10) = jdt20090421.spencertipping.com(0,10)
+  jdt20090421.spencertipping.com:
+    down(0,10) = rose(0,10)
+end
