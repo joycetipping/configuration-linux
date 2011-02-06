@@ -12,8 +12,14 @@ ln -s $conf/bash/bash_aliases    $HOME/.bash_aliases
 ln -s $conf/bash/bash_profile    $HOME/.bash_profile
 ln -s $conf/bash/profile         $HOME/.profile
 
-ln -s $conf/xinitrc              $HOME/.xinitrc
-ln -s $conf/texmf-var            $HOME/.texmf-var
+ln -s $conf/gitconfig            $HOME/.gitconfig
+ln -s $conf/R                    $HOME/.R
 ln -s $conf/ctags                $HOME/.ctags
 ln -s $conf/nodejs/node_modules  $HOME/.node_modules
-ln -s $conf/R                    $HOME/.R
+ln -s $conf/texmf-var            $HOME/.texmf-var
+ln -s $conf/xinitrc              $HOME/.xinitrc
+
+rm $HOME/.vim/vim
+rm $HOME/.R/R
+rm $HOME/.node_modules/node_modules
+rm $HOME/.texmf-var/texmf-var

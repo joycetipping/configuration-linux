@@ -1,0 +1,6 @@
+[user]
+	name = Joyce Tipping
+	email = joyce@joycetipping.com
+[core]
+	autocrlf = input
+	safecrlf = true
