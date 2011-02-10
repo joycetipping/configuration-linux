@@ -5,16 +5,16 @@ Nightflower
    dark: 000
 
 2 (red)
+  light: f0f    bright magenta
+   dark: f0f
+
+3 (green)
   light: 0f0    green
    dark: 0f0
 
-3 (green)
+4 (yellow)
   light: ff5    light yellow
    dark: ff5
-
-4 (yellow)
-  light: f0f    bright magenta
-   dark: f0f
 
 5 (blue)
   light: 6af    light blue

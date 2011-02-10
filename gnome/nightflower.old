@@ -6,28 +6,28 @@ Nightflower
 
 2 (red)
   light: 0f0    green
-   dark: 0c0    dark green
+   dark: 0f0
 
 3 (green)
   light: ff5    light yellow
-   dark: c00    red
+   dark: ff5
 
 4 (yellow)
   light: f0f    bright magenta
-   dark: c0c    magenta
+   dark: f0f
 
 5 (blue)
   light: 6af    light blue
-   dark: 36f    medium blue
+   dark: 6af
 
 6 (magenta)
   light: e8e    light purple
-   dark: 72c    purple
+   dark: e8e
 
 7 (cyan)
   light: 0ff    bright cyan
-   dark: 0cc    dark cyan
+   dark: 0ff
 
 8 (gray)
-  light: 808    dark purple
+  light: fcf    very light pink
    dark: 808    dark purple
