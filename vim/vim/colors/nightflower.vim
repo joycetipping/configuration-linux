@@ -5,7 +5,7 @@ if exists("syntax_on")
 endif
 
 "Load the 'base' colorscheme - the one you want to alter
-runtime colors/default.vim
+runtime $VIMRUNTIME/colors/default.vim
 
 "Override the name of the base colorscheme with the name of this custom one
 let g:colors_name = "nightflower"
