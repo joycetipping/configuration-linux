@@ -23,6 +23,7 @@ set title
 
 nnoremap s o<ESC>
 nnoremap S O<ESC>
+nnoremap <F3> :call ToggleTerminalCopyPaste()<CR>
 
 filetype plugin on
 au BufRead,BufNewFile *.gnarly   set filetype=gnarly
@@ -33,6 +34,20 @@ au BufRead,BufNewFile *.scala    set filetype=scala
 
 function! SyntaxItem()
   echo synIDattr(synID(line("."),col("."),1),"name")
+endfunction
+
+function! ToggleTerminalCopyPaste()
+  if &paste == 0
+    set mouse=
+    set paste
+    set nonumber
+    echo "Terminal copy & paste enabled"
+  else
+    set mouse=a
+    set nopaste
+    set number
+    echo "Terminal copy & paste disabled"
+  endif
 endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
