@@ -11,25 +11,16 @@ runtime $VIMRUNTIME/colors/default.vim
 let g:colors_name = "nightflower"
 
 "Clear the colors for any items that you don't like
-hi clear Constant
-hi clear ErrorMsg
-hi clear FoldColumn
-hi clear Folded
-hi clear IncSearch
-hi clear LineNr
-hi clear MatchParen
-hi clear Search
-hi clear Statement
-hi clear Type
+"Only do this if you want to reset everything; otherwise, set only the fields you're interested in
 
 "Set up your new & improved colors
-hi Constant      term=underline                    ctermfg=2                                 guifg=Magenta
-hi ErrorMsg      term=standout                     ctermfg=2    ctermbg=0                    guifg=White       guibg=Red
-hi FoldColumn    term=standout                     ctermfg=4    ctermbg=15                   guifg=DarkBlue    guibg=Grey
-hi Folded        term=standout                     ctermfg=4    ctermbg=15                   guifg=DarkBlue    guibg=LightGrey
-hi IncSearch     term=reverse     cterm=reverse    ctermfg=3                  gui=reverse
-hi LineNr        term=underline                    ctermfg=1                                 guifg=Brown
-hi MatchParen    term=reverse                      ctermfg=0    ctermbg=6                                      guibg=Cyan
-hi Search        term=reverse                      ctermfg=0    ctermbg=2                                      guibg=Yellow
-hi Statement     term=bold                         ctermfg=1                  gui=bold       guifg=Brown
-hi Type          term=underline                    ctermfg=3                  gui=bold       guifg=SeaGreen
+hi Constant    ctermfg=2
+hi ErrorMsg    ctermfg=2   ctermbg=0
+hi FoldColumn              ctermbg=15
+hi Folded                  ctermbg=15
+hi IncSearch   ctermfg=3
+hi LineNr      ctermfg=1
+hi MatchParen  ctermfg=0
+hi Search                  ctermbg=2
+hi Statement   ctermfg=1
+hi Type        ctermfg=3
