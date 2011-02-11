@@ -23,8 +23,8 @@ set title
 
 nnoremap s o<ESC>
 nnoremap S O<ESC>
-nnoremap  <C-h> gt
-nnoremap  <C-l> gT
+nnoremap  <C-h> gT
+nnoremap  <C-l> gt
 nnoremap <F3> :call ToggleTerminalCopyPaste()<CR>
 
 filetype plugin on
