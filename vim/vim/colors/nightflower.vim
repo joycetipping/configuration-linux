@@ -21,6 +21,8 @@ hi Folded                  ctermbg=15
 hi IncSearch   ctermfg=3
 hi LineNr      ctermfg=1
 hi MatchParen  ctermfg=0
+hi Pmenu       ctermfg=0   ctermbg=5
+hi PmenuSel    ctermfg=0   ctermbg=7
 hi Search                  ctermbg=2
 hi Statement   ctermfg=1
 hi Type        ctermfg=3
