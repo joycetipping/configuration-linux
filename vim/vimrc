@@ -9,6 +9,8 @@ set foldmethod=marker
 set hlsearch
 set ignorecase
 set incsearch
+set list
+set listchars=tab:\ \ ,trail:·
 set modeline
 set modelines=5
 set mouse=a
@@ -23,8 +25,10 @@ set title
 
 nnoremap s o<ESC>
 nnoremap S O<ESC>
-nnoremap  <C-h> gT
-nnoremap  <C-l> gt
+nnoremap <C-h> gT
+nnoremap <C-l> gt
+nnoremap <S-h> :call TabSlideLeft()<CR>
+nnoremap <S-l> :call TabSlideRight()<CR>
 nnoremap <F3> :call ToggleTerminalCopyPaste()<CR>
 
 filetype plugin on
@@ -50,6 +54,31 @@ function! ToggleTerminalCopyPaste()
     set number
     echo "Terminal copy & paste disabled"
   endif
+endfunction
+
+function! TabSlideLeft()
+  let current = tabpagenr()
+  let expr = "tabm " . (current - 2)
+  exec expr
+endfunction
+
+function! TabSlideLeft()
+  " Get current tab number (one-based)
+  let current = tabpagenr()
+
+  " Move tab only if it's not the first
+  " We're subtracting 2 because the "tabm" command is zero-based.
+  if current > 1
+    exec "tabm" . (current - 2)
+  endif
+endfunction
+
+function! TabSlideRight()
+  " Get current tab number (one-based)
+  let current = tabpagenr()
+
+  " Move tab. Since tabm is zero-based, we do not need to add 1.
+  exec "tabm " . current
 endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
