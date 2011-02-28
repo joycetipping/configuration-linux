@@ -35,6 +35,7 @@ alias u7='cd ../../../../../../../'
 alias u8='cd ../../../../../../../../'
 
 alias aliases='vim $conf/bash/bash_aliases'
+alias lily='ssh jdt@lily.local'
 alias luajit='luajit-2.0.0-beta2'
 alias musings='vim $HOME/projects/musings/2010.txt'
 alias notes='cd $HOME/library/notes/'
