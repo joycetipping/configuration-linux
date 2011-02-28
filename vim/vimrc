@@ -25,10 +25,10 @@ set title
 
 nnoremap s o<ESC>
 nnoremap S O<ESC>
-nnoremap <C-h> gT
-nnoremap <C-l> gt
-nnoremap <S-h> :call TabSlideLeft()<CR>
-nnoremap <S-l> :call TabSlideRight()<CR>
+nnoremap <S-h> gT
+nnoremap <S-l> gt
+nnoremap <C-h> :call TabSlideLeft()<CR>
+nnoremap <C-l> :call TabSlideRight()<CR>
 nnoremap <F3> :call ToggleTerminalCopyPaste()<CR>
 
 filetype plugin on
