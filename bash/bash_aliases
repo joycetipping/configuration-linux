@@ -12,8 +12,9 @@ fi
 . $conf/bash/prompt
 
 # Exports
-export TERM=xterm-color
 export EDITOR=/usr/bin/vim
+export LC_CTYPE=en_US.utf-8
+export TERM=xterm-color
 
 # Hacks
 export SSH_AUTH_SOCK=0 # This solves "Agent admitted failure to sign using the key." bug in ssh-copy-id.
