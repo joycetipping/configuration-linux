@@ -19,6 +19,7 @@ export EDITOR=/usr/bin/vim
 export SSH_AUTH_SOCK=0 # This solves "Agent admitted failure to sign using the key." bug in ssh-copy-id.
 
 # Aliases
+alias bc='echo Starting bc -l;echo;bc -l'
 alias cpl='cp -d'
 alias remove='/bin/rm'
 alias rm='echo Use remove'
@@ -47,3 +48,4 @@ export R_LIBS="$HOME/.R:$R_LIBS"
 alias irbs='irb --simple-prompt'
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+cd .  # To source the rvmrc
