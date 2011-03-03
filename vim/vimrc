@@ -17,6 +17,7 @@ set mouse=a
 set nojoinspaces
 set nowrap
 set number
+set ruler
 set shiftwidth=2
 set showcmd
 set tabstop=2
