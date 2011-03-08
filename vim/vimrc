@@ -37,8 +37,6 @@ nnoremap <F3> :call ToggleTerminalCopyPaste()<CR>
 
 filetype plugin on
 au BufRead,BufNewFile *.gnarly   set filetype=gnarly
-au BufRead,BufNewFile *.hx       set filetype=haxe
-au BufRead,BufNewFile *.ljs      set filetype=ljs
 au BufRead,BufNewFile *.markdown set filetype=markdown
 au BufRead,BufNewFile *.scala    set filetype=scala
 
