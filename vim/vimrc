@@ -6,6 +6,7 @@ set autoindent
 set expandtab
 set foldcolumn=2
 set foldmethod=marker
+set hidden
 set hlsearch
 set ignorecase
 set incsearch
@@ -26,6 +27,8 @@ set title
 
 nnoremap s o<ESC>
 nnoremap S O<ESC>
+nnoremap ' `
+nnoremap ` '
 nnoremap <S-h> gT
 nnoremap <S-l> gt
 nnoremap <C-h> :call TabSlideLeft()<CR>
@@ -87,11 +90,14 @@ endfunction
 "Special programs
 
 "Ctags
-map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>  "C-\  Open definition in new tab
-map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>       "A-]  Open definition in vertical split   !! Alt key is captured by gnome-term
+"map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>  "Open in new tab
+map <C-\> :vsp<CR>:exec("tag ".expand("<cword>"))<CR>        "Open in vertical split
 
 "Nerdtree
 map <F2> :NERDTreeToggle<CR>
+
+"Tlist
+map <F3> :TlistToggle<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
