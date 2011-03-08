@@ -25,6 +25,8 @@ set tabstop=2
 set tags=./tags;/
 set title
 
+set runtimepath=~/.vim,~/.vim/plugins/*,$VIMRUNTIME
+
 nnoremap s o<ESC>
 nnoremap S O<ESC>
 nnoremap ' `

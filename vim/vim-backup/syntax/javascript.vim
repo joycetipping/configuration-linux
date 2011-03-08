@@ -1,0 +1,1 @@
+/home/joycetipping/projects/github/js-vim-highlighter/javascript.vim
