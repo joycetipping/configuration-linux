@@ -25,7 +25,9 @@ set tabstop=2
 set tags=./tags;/
 set title
 
-set runtimepath=~/.vim,~/.vim/plugins/*,$VIMRUNTIME
+set runtimepath+=~/.vim/plugins/*
+
+let mapleader = " "
 
 nnoremap s o<ESC>
 nnoremap S O<ESC>
@@ -35,7 +37,7 @@ nnoremap <S-h> gT
 nnoremap <S-l> gt
 nnoremap <C-h> :call TabSlideLeft()<CR>
 nnoremap <C-l> :call TabSlideRight()<CR>
-nnoremap <F3> :call ToggleTerminalCopyPaste()<CR>
+nnoremap <F12> :call ToggleTerminalCopyPaste()<CR>
 
 filetype plugin on
 au BufRead,BufNewFile *.gnarly   set filetype=gnarly
@@ -61,12 +63,6 @@ function! ToggleTerminalCopyPaste()
 endfunction
 
 function! TabSlideLeft()
-  let current = tabpagenr()
-  let expr = "tabm " . (current - 2)
-  exec expr
-endfunction
-
-function! TabSlideLeft()
   " Get current tab number (one-based)
   let current = tabpagenr()
 
@@ -87,7 +83,7 @@ endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"Special programs
+"Plugins
 
 "Ctags
 "map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>  "Open in new tab
