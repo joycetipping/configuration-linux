@@ -19,13 +19,12 @@ set nojoinspaces
 set nowrap
 set number
 set ruler
+set runtimepath+=~/.vim/plugins/*
 set shiftwidth=2
 set showcmd
 set tabstop=2
 set tags=./tags;/
 set title
-
-set runtimepath+=~/.vim/plugins/*
 
 let mapleader = " "
 
@@ -38,6 +37,8 @@ nnoremap <S-l> gt
 nnoremap <C-h> :call TabSlideLeft()<CR>
 nnoremap <C-l> :call TabSlideRight()<CR>
 nnoremap <F12> :call ToggleTerminalCopyPaste()<CR>
+
+com Helptags call GetHelpTags()
 
 filetype plugin on
 au BufRead,BufNewFile *.gnarly   set filetype=gnarly
@@ -81,6 +82,13 @@ function! TabSlideRight()
   exec "tabm " . current
 endfunction
 
+function! GetHelpTags()
+  let doc_dirs = filter(split(system('find ~/.vim/ | grep -e doc$'), '\n'), 'isdirectory(v:val)')
+  for dir in doc_dirs
+    exec "helptags" . dir
+  endfor
+endfunction
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "Plugins
@@ -94,7 +102,6 @@ map <F2> :NERDTreeToggle<CR>
 
 "Tlist
 map <F3> :TlistToggle<CR>
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
