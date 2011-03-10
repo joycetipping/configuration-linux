@@ -36,7 +36,7 @@ nnoremap <S-h> gT
 nnoremap <S-l> gt
 nnoremap <C-h> :call TabSlideLeft()<CR>
 nnoremap <C-l> :call TabSlideRight()<CR>
-nnoremap <F12> :call ToggleTerminalCopyPaste()<CR>
+nnoremap <F7>  :call ToggleTerminalCopyPaste()<CR>
 
 com Helptags call GetHelpTags()
 
