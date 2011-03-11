@@ -1,0 +1,28 @@
+#!/bin/bash
+
+conf="$HOME/projects/configuration"
+homedir="$HOME"
+
+# Set up symlinks
+ln -sf $conf/vim/vim                  $HOME/.vim
+ln -sf $conf/vim/vimrc                $HOME/.vimrc
+ln -sf $conf/emacs                    $HOME/.emacs
+
+ln -sf $conf/bash/bashrc              $HOME/.bashrc
+ln -sf $conf/bash/bash_aliases        $HOME/.bash_aliases
+ln -sf $conf/bash/bash_profile        $HOME/.bash_profile
+ln -sf $conf/bash/profile             $HOME/.profile
+
+ln -sf $conf/git/gitconfig            $HOME/.gitconfig
+ln -sf $conf/git/git-completion.bash  $homedir/bin/git-completion.bash
+
+ln -sf $conf/R                        $HOME/.R
+ln -sf $conf/ctags                    $HOME/.ctags
+ln -sf $conf/nodejs/node_modules      $HOME/.node_modules
+ln -sf $conf/texmf-var                $HOME/.texmf-var
+ln -sf $conf/xinitrc                  $HOME/.xinitrc
+
+rm $HOME/.vim/vim
+rm $HOME/.R/R
+rm $HOME/.node_modules/node_modules
+rm $HOME/.texmf-var/texmf-var
