@@ -1,56 +1,8 @@
 # vim: syntax=sh :
+homedir="$HOME"
+conf="$homedir/projects/configuration"
 
-# Helpful variables:
-conf="$HOME/projects/configuration"
-
-# set PATH so it includes user's private bin if it exists
-if [ -d "$HOME/bin" ] ; then
-    PATH="$PATH:$HOME/bin"
-fi
-
-# Bash prompt:
-. $conf/bash/prompt
-
-# Exports
-export EDITOR=/usr/bin/vim
-export LC_CTYPE=en_US.utf-8
-export TERM=xterm-color
-
-# Hacks
-export SSH_AUTH_SOCK=0 # This solves "Agent admitted failure to sign using the key." bug in ssh-copy-id.
-
-# Aliases
-alias aliases='vim $conf/bash/bash_aliases'
-alias bc='echo Starting bc -l;echo;bc -l'
-alias cpl='cp -d'
-alias luajit='luajit-2.0.0-beta2'
-alias musings='vim $HOME/projects/musings/2010.txt'
-alias notes='cd $HOME/library/notes/'
-alias remove='/bin/rm'
-alias rm='echo Use remove'
-alias sudojt='sudo -u joycetipping'
-alias vt='vim -t'
-
-alias lily='ssh jdt@lily.local'
-alias testdb='ssh fingertip.boulder.foraker.com'
-alias prodb='ssh db.fingertipformulary.com'
-alias sultana='ssh sultana.boulder.foraker.com'
-
-alias u='cd ../'
-alias u2='cd ../../'
-alias u3='cd ../../../'
-alias u4='cd ../../../../'
-alias u5='cd ../../../../../'
-alias u6='cd ../../../../../../'
-alias u7='cd ../../../../../../../'
-alias u8='cd ../../../../../../../../'
-
-# R
-export R_LIBS="$HOME/.R:$R_LIBS"
-
-# Ruby
-alias irbs='irb --simple-prompt'
-
-# RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
-cd .  # To source the rvmrc
+if [[ -f "$conf/bash/includes/admin"     ]]; then source "$conf/bash/includes/admin";     fi
+if [[ -f "$conf/bash/includes/aliases"   ]]; then source "$conf/bash/includes/aliases";   fi
+if [[ -f "$conf/bash/includes/functions" ]]; then source "$conf/bash/includes/functions"; fi
+if [[ -f "$conf/bash/includes/programs"  ]]; then source "$conf/bash/includes/programs";  fi

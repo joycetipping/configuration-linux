@@ -1,0 +1,8 @@
+# vim: syntax=sh :
+homedir="$HOME"
+conf="$homedir/projects/configuration"
+
+# Wikipedia
+wk() {
+  w3m http://en.wikipedia.org/wiki/$(echo $* | tr ' ' '_')
+}
