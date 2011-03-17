@@ -1,8 +1,5 @@
 # vim: syntax=sh :
-homedir="$HOME"
-conf="$homedir/projects/configuration"
 
-# Aliases
 alias aliases="vim $conf/bash/bash_aliases"
 alias bc="echo Starting bc -l;echo;bc -l"
 alias cpl="cp -d"
@@ -13,11 +10,6 @@ alias remove="/bin/rm"
 alias rm="echo Use remove"
 alias sudojt="sudo -u joycetipping"
 alias vt="vim -t"
-
-alias lily="ssh jdt@lily.local"
-alias testdb="ssh fingertip.boulder.foraker.com"
-alias prodb="ssh db.fingertipformulary.com"
-alias sultana="ssh sultana.boulder.foraker.com"
 
 alias  u="cd ../"
 alias u2="cd ../../"

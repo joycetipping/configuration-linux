@@ -1,0 +1,8 @@
+# vim: syntax=sh :
+
+alias clients="ssh -t sultana.boulder.foraker.com 'cd /network_files/clients/;bash'"
+alias designbox="ssh -t designbox@design-workstation.local 'cd Desktop/joyce/;bash'"
+alias prodb="ssh db.fingertipformulary.com"
+alias rose="ssh joycetipping@rose.local"
+alias sultana="ssh sultana.boulder.foraker.com"
+alias testdb="ssh fingertip.boulder.foraker.com"

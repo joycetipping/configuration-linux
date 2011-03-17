@@ -1,6 +1,4 @@
 # vim: syntax=sh :
-homedir="$HOME"
-conf="$homedir/projects/configuration"
 
 # Wikipedia
 wk() {

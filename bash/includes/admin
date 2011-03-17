@@ -1,12 +1,10 @@
 # vim: syntax=sh :
-homedir="$HOME"
-conf="$homedir/projects/configuration"
 
 # Include user's private bin
 if [[ -d "$homedir/bin" ]]; then PATH="$PATH:$homedir/bin"; fi
 
 # Bash prompt
-source $conf/bash/prompt
+source "$conf/bash/prompt"
 
 # Terminal configurations
 export EDITOR=/usr/bin/vim

@@ -1,17 +1,11 @@
 # vim: syntax=sh :
-homedir="$HOME"
-conf="$homedir/projects/configuration"
 
 # R
 export R_LIBS="$HOME/.R:$R_LIBS"
-
-# Ruby
-alias irbs='irb --simple-prompt'
 
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 cd .  # To source the rvmrc
 
 # SSH
-#export SSH_AUTH_SOCK=0 # This solves "Agent admitted failure to sign using the key." bug in ssh-copy-id.
-ssh-add
+ssh-add > /dev/null 2>&1
