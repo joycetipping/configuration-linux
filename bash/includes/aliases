@@ -1,6 +1,6 @@
 # vim: syntax=sh :
 
-alias aliases="vim $conf/bash/bash_aliases"
+alias aliases="vim $conf/bash/includes/aliases"
 alias bc="echo Starting bc -l;echo;bc -l"
 alias cpl="cp -d"
 alias luajit="luajit-2.0.0-beta2"
@@ -8,6 +8,8 @@ alias musings="vim $HOME/projects/musings/2010.txt"
 alias notes="cd $HOME/library/notes/"
 alias remove="/bin/rm"
 alias rm="echo Use remove"
+alias sqlite="sqlite3 -column -header"
+alias sqlite3="sqlite3 -column -header"
 alias sudojt="sudo -u joycetipping"
 alias vt="vim -t"
 
