@@ -1,5 +1,8 @@
 #!/bin/bash
 
+export homedir="$HOME"
+export conf="$homedir/projects/configuration"
+
 # Set up symlinks
 ln -sf $conf/vim/vim                  $HOME/.vim
 ln -sf $conf/vim/vimrc                $HOME/.vimrc
