@@ -1,6 +1,7 @@
 # vim: syntax=sh :
 
 alias aliases="vim $conf/bash/includes/aliases"
+alias conf="cd $conf"
 alias bc="echo Starting bc -l;echo;bc -l"
 alias cpl="cp -d"
 alias luajit="luajit-2.0.0-beta2"
