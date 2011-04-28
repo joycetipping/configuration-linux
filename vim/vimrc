@@ -82,7 +82,7 @@ function! TabSlideRight()
   exec "tabm " . current
 endfunction
 
-function! GetHelpTags()
+function! HelpTags()
   let doc_dirs = filter(split(system('find ~/.vim/ | grep -e doc$'), '\n'), 'isdirectory(v:val)')
   for dir in doc_dirs
     exec "helptags" . dir
