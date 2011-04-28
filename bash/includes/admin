@@ -1,7 +1,7 @@
 # vim: syntax=sh :
 
 # Include user's private bin
-if [[ -d "$homedir/bin" ]]; then PATH="$PATH:$homedir/bin"; fi
+if [[ -d "$home/bin" ]]; then PATH="$PATH:$home/bin"; fi
 
 # Bash prompt
 source "$conf/bash/prompt"
