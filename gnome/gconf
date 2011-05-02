@@ -268,7 +268,7 @@ if (@attributes) {
 }
 __I4eRG7HtLDZhFgrlr0QDrQO5MRwJYGFlotQsWQIE/d8
 
-meta::function('gconf_setter', <<'__mPO+pKQAtAT2G9PtiPePmpaKieeVJCNhzk0Fzo0ZllI');
+meta::function('gconf_setter', <<'__un2Bfs0VAIg8voFukcdYK3evUKsTIRhEfG/ur0kycZQ');
 # Gconf Setter
 #
 # Examples:
@@ -304,10 +304,10 @@ return sub {
     my ($type, $path, $value) = map {trim ($_)} split /\s*\*\s*/, $_;
     my $ltype = ($type =~ s/list:(.*)/list/) ? "--list-type $1" : '';
 
-    trace (run (qq|gconftool --type $type --set $base$path $ltype '$value'|));
+    trace (run (qq|gconftool-2 --type $type --set $base$path $ltype '$value'|));
   }
 };
-__mPO+pKQAtAT2G9PtiPePmpaKieeVJCNhzk0Fzo0ZllI
+__un2Bfs0VAIg8voFukcdYK3evUKsTIRhEfG/ur0kycZQ
 
 meta::function('grab', <<'__sXs1aeJVBERH6nWE7ZpWiIO5Cg7fSBWcoscDg1DHzD8');
 my ($filename, @attribute_names) = @_;

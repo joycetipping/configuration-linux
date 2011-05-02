@@ -1,0 +1,27 @@
+my $compiz_general = gconf_setter ('/apps/compiz/general/');
+my $hsize = 5;
+my $vsize = 5;
+my $active_plugins = add ("wallpaper", "/apps/compiz/general/allscreens/options/active_plugins");
+&$compiz_general (<<EOF
+  int          *   screen0/options/hsize                                          *   $hsize             *   Range 1 - 32
+  int          *   screen0/options/vsize                                          *   $vsize             *   Range 1 - 32
+  list:string  *   allscreens/options/active_plugins                              *   $active_plugins    *
+  string       *   allscreens/options/toggle_window_maximized_key                 *   \<Alt\>m       *
+  string       *   allscreens/options/toggle_window_maximized_horizontally_key    *   \<Alt\>h       *
+  string       *   allscreens/options/toggle_window_maximized_vertically_key      *   \<Alt\>v       *
+EOF
+);
+
+my $compiz_plugins = gconf_setter ('/apps/compiz/plugins/');
+my $backgrounds = stack ('/home/joycetipping/library/images/backgrounds/warty-final-ubuntu-pink.jpg', $hsize * $vsize);
+&$compiz_plugins (<<EOF
+  list:int     *  animation/screen0/options/close_durations  *  [100,50,50]   *  
+  list:int     *  animation/screen0/options/open_durations   *  [100,50,50]   *  
+  int          *  move/allscreens/options/opacity            *  50            *   Range 1 - 100
+  float        *  scale/screen0/options/speed                *  4             *  
+  float        *  scale/screen0/options/timestep             *  0.5           *  
+  bool         *  wall/allscreens/options/show_switcher      *  false         *  
+  float        *  wall/allscreens/options/slide_duration     *  0             *   Range 0 - 5
+  list:string  *  wallpaper/screen0/options/bg_image         *  $backgrounds  *
+EOF
+);

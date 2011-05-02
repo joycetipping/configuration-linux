@@ -1,0 +1,15 @@
+my $metacity_general = gconf_setter ('/apps/metacity/general/');
+&$metacity_general (<<EOF
+  string    *  action_double_click_titlebar  *  toggle_maximize    *
+  string    *  button_layout                 *                     *
+  string    *  focus_mode                    *  sloppy             *
+  string    *  theme                         *  Unity              *
+  string    *  titlebar_font                 *  Sans 10            *
+EOF
+);
+
+my $metacity = gconf_setter ('/apps/metacity/');
+&$metacity (<<EOF
+  string    *  global_keybindings/run_command_terminal  *  <Control>grave  *
+EOF
+);
