@@ -1,7 +1,7 @@
 #!/bin/bash
 
-export homedir="$HOME"
-export conf="$homedir/projects/configuration"
+export home="$HOME"
+export conf="$home/projects/configuration"
 
 # Set up symlinks
 ln -sf $conf/vim/vim                  $HOME/.vim
@@ -9,18 +9,17 @@ ln -sf $conf/vim/vimrc                $HOME/.vimrc
 ln -sf $conf/emacs                    $HOME/.emacs
 
 ln -sf $conf/bash/bashrc              $HOME/.bashrc
-ln -sf $conf/bash/bash_aliases        $HOME/.bash_aliases
 ln -sf $conf/bash/bash_profile        $HOME/.bash_profile
 ln -sf $conf/bash/profile             $HOME/.profile
+ln -sf $conf/bash/xinitrc             $HOME/.xinitrc
 
 ln -sf $conf/git/gitconfig            $HOME/.gitconfig
-ln -sf $conf/git/git-completion.bash  $homedir/bin/git-completion.bash
+ln -sf $conf/git/git-completion.bash  $home/bin/git-completion.bash
 
 ln -sf $conf/R                        $HOME/.R
 ln -sf $conf/ctags                    $HOME/.ctags
 ln -sf $conf/nodejs/node_modules      $HOME/.node_modules
 ln -sf $conf/texmf-var                $HOME/.texmf-var
-ln -sf $conf/xinitrc                  $HOME/.xinitrc
 
 rm $HOME/.vim/vim
 rm $HOME/.R/R

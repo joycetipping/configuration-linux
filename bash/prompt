@@ -1,4 +1,6 @@
 #!/bin/bash
 # WTFPL license ... cheers!
 
-export PS1='\[\033[1;35m\]\h\[\033[1;31m\]\W\[\033[0;35m\]$(__git_ps1 "<%s>") \[\033[0;0m\]'
+#export PS1='\[\033[1;35m\]\h\[\033[1;31m\]\W\[\033[0;35m\]$(__git_ps1 "<%s>") \[\033[0;0m\]'
+export PS1='\[\033[1;35m\]\h\[\033[1;31m\]\W\[\033[0;35m\] \[\033[0;0m\]'
+export PROMPT_COMMAND='printf "%*s\r" "$COLUMNS" "$(git branch)"'

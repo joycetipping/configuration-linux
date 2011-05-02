@@ -1,21 +1,18 @@
 # vim: syntax=sh :
 
-alias aliases="vim $conf/bash/includes/aliases"
-alias conf="cd $conf"
-alias bc="echo Starting bc -l;echo;bc -l"
+# Bash
 alias cpl="cp -d"
-alias luajit="luajit-2.0.0-beta2"
-alias music="cd $home/library/music/playlists"
-alias musings="vim $home/projects/musings/2010.txt"
-alias notes="cd $home/library/notes/"
+alias ct="ctags -R"
+alias l='ls -CF'
+alias la="ls -a"
+alias ll="ls -ilh"
+alias ls="ls --color=auto"
+alias lst="ls -tr"
 alias remove="/bin/rm"
 alias rm="echo Use remove"
-alias sqlite="sqlite3 -column -header"
-alias sqlite3="sqlite3 -column -header"
+alias s="ls"
 alias sudojt="sudo -u joycetipping"
-alias vt="vim -t"
-
-alias  u="cd ../"
+alias sus='sudo pm-suspend'
 alias u2="cd ../../"
 alias u3="cd ../../../"
 alias u4="cd ../../../../"
@@ -23,3 +20,22 @@ alias u5="cd ../../../../../"
 alias u6="cd ../../../../../../"
 alias u7="cd ../../../../../../../"
 alias u8="cd ../../../../../../../../"
+alias u="cd ../"
+alias uc="uml_mconsole"
+alias www='ssh spences7@spencertipping.com'
+alias xl='startx & logout'
+
+# Applications
+alias bc="echo Starting bc -l;echo;bc -l"
+alias gconftool="gconftool-2"
+alias luajit="luajit-2.0.0-beta2"
+alias sqlite3="sqlite3 -column -header"
+alias sqlite="sqlite3 -column -header"
+alias vt="vim -t"
+
+# Places
+alias aliases="vim $conf/bash/includes/aliases"
+alias conf="cd $conf"
+alias music="cd $home/library/music/playlists"
+alias musings="vim $home/projects/musings/2010.txt"
+alias notes="cd $home/library/notes/"
