@@ -1,5 +1,8 @@
 # vim: syntax=sh :
 
+# Git
+source "$conf/git/git-completion.bash"
+
 # R
 export R_LIBS="$HOME/.R:$R_LIBS"
 

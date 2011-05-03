@@ -1,9 +1,0 @@
-# vim: syntax=sh :
-export home="$HOME"
-export conf="$home/projects/configuration"
-
-if [[ -f "$conf/bash/includes/admin"     ]]; then source "$conf/bash/includes/admin";     fi
-if [[ -f "$conf/bash/includes/aliases"   ]]; then source "$conf/bash/includes/aliases";   fi
-if [[ -f "$conf/bash/includes/foraker"   ]]; then source "$conf/bash/includes/foraker";   fi
-if [[ -f "$conf/bash/includes/functions" ]]; then source "$conf/bash/includes/functions"; fi
-if [[ -f "$conf/bash/includes/programs"  ]]; then source "$conf/bash/includes/programs";  fi
