@@ -66,23 +66,19 @@ sub trace {
 
 my $apps = gconf_setter ('/apps/');
 &$apps (<<EOF
-  bool    *    nautilus/preferences/show_desktop                  *    false     *
-  string  *    gnome_settings_daemon/keybindings/volume_down      *    \<Ctrl\>\<Alt\>a  *
-  string  *    gnome_settings_daemon/keybindings/volume_up        *    \<Ctrl\>\<Alt\>q  *
-  string  *    gnome_settings_daemon/keybindings/volume_mute      *    \<Ctrl\>\<Alt\>z  *
+  bool  *  nautilus/preferences/show_desktop  *  false  *
 EOF
 );
 
 my $desktop = gconf_setter ('/desktop/');
 &$desktop (<<EOF
-  float    *    gnome/font_rendering/dpi    *    72    *
+  float  *  gnome/font_rendering/dpi  *  72  *
 EOF
 );
 
 my $metacity = gconf_setter ('/apps/metacity/');
 &$metacity (<<EOF
-  string    *  global_keybindings/run_command_terminal  *  <Control>grave  *
-  string    *  general/focus_mode                       *  sloppy          *
+  string  *  general/focus_mode  *  sloppy  *
 EOF
 );
 
