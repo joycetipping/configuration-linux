@@ -4,6 +4,8 @@ export home="$HOME"
 export conf="$home/projects/configuration"
 
 # Set up symlinks
+ln -sf $conf/arch-config              $HOME/.config
+
 ln -sf $conf/vim/vim                  $HOME/.vim
 ln -sf $conf/vim/vimrc                $HOME/.vimrc
 ln -sf $conf/emacs                    $HOME/.emacs
