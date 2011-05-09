@@ -1,0 +1,144 @@
+#!/usr/bin/perl
+
+# Gconf Setter
+#
+# Examples:
+#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
+#
+#   my $compiz_plugins = gconf_setter ('/apps/compiz/plugins/');
+#
+#   &$compiz_plugins (<<EOF
+#     list:int  * animation/screen0/options/open_durations * [100,50,50] *
+#     int       * move/allscreens/options/opacity          * 50          * Range 1 - 100
+#     bool      * wall/screen0/options/edgeflip_pointer    * true        *
+#     float     * wall/allscreens/options/slide_duration   * 0           * Range 0 - 5
+#   EOF
+#   );
+#
+#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
+#
+#   my $compiz_plugins = gconf_setter ('/apps/compiz/plugins/');
+#
+#   &$compiz_plugins (
+#     'list:int  * animation/screen0/options/open_durations * [100,50,50]',
+#     'int       * move/allscreens/options/opacity          * 50'         ,   # Range 1 - 100
+#     'bool      * wall/screen0/options/edgeflip_pointer    * true'       ,
+#     'float     * wall/allscreens/options/slide_duration   * 0'          );  # Range 0 - 5
+#
+#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
+
+sub gconf_setter {
+  my $base = shift @_ || '';
+
+  return sub {
+    my @settings = map {split /\n/, $_} @_;
+    foreach (@settings) {
+      my ($type, $path, $value) = map {trim($_)} split /\s*\*\s*/, $_;
+      my $ltype = ($type =~ s/list:(.*)/list/) ? "--list-type $1" : '';
+
+      trace(run(qq|gconftool-2 --type $type --set $base$path $ltype '$value'|));
+    }
+  };
+}
+
+sub trim {
+  my ($string) = @_;
+  $string =~ s/^\s+|\s+$//g;
+  return $string;
+}
+
+sub run {
+  my ($command) = @_;
+  print qx|$command|;
+  return $command;
+}
+
+sub trace {
+  my ($thing) = @_;
+  print "$thing\n";
+  return $thing;
+}
+
+
+#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
+# Settings
+#
+
+my $apps = gconf_setter ('/apps/');
+&$apps (<<EOF
+  bool    *    nautilus/preferences/show_desktop                  *    false     *
+  string  *    gnome_settings_daemon/keybindings/volume_down      *    \<Ctrl\>\<Alt\>a  *
+  string  *    gnome_settings_daemon/keybindings/volume_up        *    \<Ctrl\>\<Alt\>q  *
+  string  *    gnome_settings_daemon/keybindings/volume_mute      *    \<Ctrl\>\<Alt\>z  *
+EOF
+);
+
+my $desktop = gconf_setter ('/desktop/');
+&$desktop (<<EOF
+  float    *    gnome/font_rendering/dpi    *    72    *
+EOF
+);
+
+my $metacity = gconf_setter ('/apps/metacity/');
+&$metacity (<<EOF
+  string    *  global_keybindings/run_command_terminal  *  <Control>grave  *
+  string    *  general/focus_mode                       *  sloppy          *
+EOF
+);
+
+
+#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
+# Terminal
+#
+
+my $gnome_terminal = gconf_setter ('/apps/gnome-terminal/global/');
+&$gnome_terminal (<<EOF
+  list:string    *    profile_list     *    [Default,Nightflower,Dayflower]  *
+  string         *    default_profile  *    Nightflower                               *
+EOF
+);
+
+#my $font = 'Inconsolata Medium 10';
+my $font = 'Monospace Bold 9';
+
+my $nightflower_palette = qx|./parse -d nightflower|;
+my $nightflower = gconf_setter ('/apps/gnome-terminal/profiles/Nightflower/');
+&$nightflower (<<EOF
+  bool      *    allow_bold           *    false                  *
+  bool      *    default_show_menubar *    false                  *
+  bool      *    silent_bell          *    true                   *
+  bool      *    use_system_font      *    false                  *
+  bool      *    use_theme_colors     *    false                  *
+  float     *    background_darkness  *    0.85                   *    Range 0 - 1
+  int       *    scrollback_lines     *    20000                  *
+  string    *    background_color     *    #000000000000          *
+  string    *    background_type      *    transparent            *
+  string    *    cursor_shape         *    underline              *
+  string    *    font                 *    $font                  *
+  string    *    foreground_color     *    #ffffccccffff          *
+  string    *    palette              *    $nightflower_palette   *
+  string    *    scrollbar_position   *    hidden                 *
+  string    *    visible_name         *    nightflower            *
+EOF
+);
+
+my $dayflower_palette = qx|./parse -l dayflower|;
+my $dayflower = gconf_setter ('/apps/gnome-terminal/profiles/Dayflower/');
+&$dayflower (<<EOF
+  bool      *    allow_bold           *    false                  *
+  bool      *    default_show_menubar *    false                  *
+  bool      *    silent_bell          *    true                   *
+  bool      *    use_system_font      *    false                  *
+  bool      *    use_theme_colors     *    false                  *
+  float     *    background_darkness  *    0.85                   *    Range 0 - 1
+  int       *    scrollback_lines     *    20000                  *
+  string    *    background_color     *    #ffffffffffff          *
+  string    *    background_type      *    transparent            *
+  string    *    cursor_shape         *    underline              *
+  string    *    font                 *    $font                  *
+  string    *    foreground_color     *    #000000000000          *
+  string    *    palette              *    $dayflower_palette     *
+  string    *    scrollbar_position   *    hidden                 *
+  string    *    visible_name         *    dayflower              *
+EOF
+);
