@@ -1,20 +1,17 @@
-#!/bin/bash
+#!/bin/sh
+#
+# ~/.xinitrc
+#
+# Executed by startx (run your window manager from here)
 
-profile=e16
+if [ -d /etc/X11/xinit/xinitrc.d ]; then
+  for f in /etc/X11/xinit/xinitrc.d/*; do
+    [ -x "$f" ] && . "$f"
+  done
+  unset f
+fi
 
-sleep 2 && (
-  xrandr --dpi 72
-  xrdb ~/.Xdefaults) &
-
-case $profile in
-  e16)
-  ecryptfs-mount-private
-  gnome-settings-daemon &
-  sleep 2 && nm-applet --sm-disable &
-  xrandr --dpi 96
-  exec e16
-  ;;
-
-  gnome)
-  exec gnome-session
-esac
+# exec gnome-session
+# exec startkde
+# exec startxfce4
+# ...or the Window Manager of your choice
