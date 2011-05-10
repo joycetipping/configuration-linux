@@ -151,15 +151,15 @@
     <chainQuitKey>C-g</chainQuitKey>
 
     <!-- Maximization -->
-    <keybind key='W-v'>
+    <keybind key='A-v'>
       <action name='ToggleMaximizeVert'></action>
     </keybind>
 
-    <keybind key='W-h'>
+    <keybind key='A-h'>
       <action name='ToggleMaximizeHorz'></action>
     </keybind>
 
-    <keybind key='W-m'>
+    <keybind key='A-m'>
       <action name='ToggleMaximizeFull'></action>
     </keybind>
 
@@ -189,6 +189,12 @@
           <name>Terminal</name>
         </startupnotify>
         <command>gnome-terminal --geometry=80x20</command>
+      </action>
+    </keybind>
+
+    <keybind key="W-m">
+      <action name="Execute">
+        <command>gnome-terminal --geometry=50x12</command>
       </action>
     </keybind>
 
