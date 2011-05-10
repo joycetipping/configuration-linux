@@ -24,6 +24,7 @@ ln -sf $conf/ctags                    $HOME/.ctags
 ln -sf $conf/nodejs/node_modules      $HOME/.node_modules
 ln -sf $conf/texmf-var                $HOME/.texmf-var
 
+rm $HOME/.config/arch-config
 rm $HOME/.vim/vim
 rm $HOME/.R/R
 rm $HOME/.node_modules/node_modules
