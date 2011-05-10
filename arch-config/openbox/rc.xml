@@ -159,6 +159,10 @@
       <action name='ToggleMaximizeHorz'></action>
     </keybind>
 
+    <keybind key='W-m'>
+      <action name='ToggleMaximizeFull'></action>
+    </keybind>
+
     <!-- Volume control -->
     <keybind key='W-Up'>
       <action name='Execute'>
@@ -185,18 +189,6 @@
           <name>Terminal</name>
         </startupnotify>
         <command>gnome-terminal --geometry=80x20</command>
-      </action>
-    </keybind>
-
-    <keybind key="W-r">
-      <action name="Execute">
-        <command>/home/spencertipping/bin/rb</command>
-      </action>
-    </keybind>
-
-    <keybind key="W-m">
-      <action name="Execute">
-        <command>gnome-terminal --geometry=50x12</command>
       </action>
     </keybind>
 
