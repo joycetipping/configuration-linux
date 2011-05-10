@@ -5,6 +5,7 @@ export conf="$home/projects/configuration"
 
 # Set up symlinks
 ln -sf $conf/arch-config              $HOME/.config
+ln -sf $conf/conkyrc                  $HOME/.conkyrc
 
 ln -sf $conf/vim/vim                  $HOME/.vim
 ln -sf $conf/vim/vimrc                $HOME/.vimrc

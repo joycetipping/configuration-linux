@@ -1,0 +1,2 @@
+#!/bin/bash
+nitrogen --set-zoom-fill ~/library/images/backgrounds/warty-final-ubuntu-blue.png
