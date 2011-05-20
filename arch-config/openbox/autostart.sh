@@ -4,14 +4,20 @@
 # More information about this can be found at:
 # http://openbox.org/wiki/Help:Autostart
 
-./setup-background                  # A wrapper for nitrogen
-./setlayout 0 6 6 0                 # Set up virtual desktops
+~/projects/configuration/arch-config/openbox/setup-background                  # A wrapper for nitrogen
+~/projects/configuration/arch-config/openbox/setlayout 0 6 6 0                 # Set up virtual desktops
 
 synergys -c ~/.synergy.conf
 
-lxsession &                             # Start session manager
-xfce4-power-manager &                   # Enable power management
-cairo-compmgr &                         # Enable Eyecandy
+lxsession &                         # Start session manager
+xfce4-power-manager &               # Enable power management
+cairo-compmgr &                     # Enable Eyecandy
 
-(sleep 2s && tint2) &                   # Panel
-(sleep 3s && conky -q) &                # Notifications
+# Detect and configure touchpad. See 'man synclient' for more info.
+if egrep -iq 'touchpad' /proc/bus/input/devices; then
+    synclient VertEdgeScroll=1 &
+    synclient TapButton1=1 &
+fi
+
+(sleep 2s && tint2) &               # Panel
+(sleep 3s && conky -q) &            # Notifications
