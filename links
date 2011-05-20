@@ -13,6 +13,7 @@ ln -sf $conf/emacs                    $HOME/.emacs
 
 ln -sf $conf/bash/bashrc              $HOME/.bashrc
 ln -sf $conf/bash/bash_profile        $HOME/.bash_profile
+ln -sf $conf/bash/dir_colors          $HOME/.dir_colors
 ln -sf $conf/bash/profile             $HOME/.profile
 ln -sf $conf/bash/xinitrc             $HOME/.xinitrc
 
