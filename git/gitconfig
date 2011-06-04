@@ -2,13 +2,14 @@
 	name  = Joyce Tipping
 	email = joyce@joycetipping.com
 [alias]
-  co   = checkout
-  ci   = commit -v
-  st   = status
-  br   = branch
-  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-  type = cat-file -t
-  dump = cat-file -p
+  br    = branch
+  cdiff = diff --cached
+  ci    = commit -v
+  co    = checkout
+  dump  = cat-file -p
+  hist  = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  st    = status
+  type  = cat-file -t
 [color]
   diff   = auto
   status = auto
