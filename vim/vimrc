@@ -39,6 +39,7 @@ nnoremap <C-l> :call TabSlideRight()<CR>
 nnoremap <F7>  :call ToggleTerminalCopyPaste()<CR>
 
 com Helptags call GetHelpTags()
+com Ws :%s/\s\+$//
 
 filetype plugin on
 au BufRead,BufNewFile *.gnarly   set filetype=gnarly
