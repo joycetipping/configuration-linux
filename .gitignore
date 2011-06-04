@@ -1,2 +1,4 @@
 *.swp
 .netrwhist
+config-arch/google-chrome/
+config-arch/chromium/
