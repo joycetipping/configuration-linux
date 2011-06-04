@@ -5,7 +5,7 @@
 # http://openbox.org/wiki/Help:Autostart
 
 ~/projects/configuration/arch-config/openbox/setup-background                  # A wrapper for nitrogen
-~/projects/configuration/arch-config/openbox/setlayout 0 6 6 0                 # Set up virtual desktops
+obsetlayout 0 6 6 0                 # Set up virtual desktops
 
 synergys -c ~/.synergy.conf
 
