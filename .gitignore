@@ -2,3 +2,4 @@
 .netrwhist
 config-arch/google-chrome/
 config-arch/chromium/
+config-arch/dconf/user
