@@ -1,1 +1,1 @@
-/home/joycetipping/projects/github/vim-markdown/syntax/markdown.vim
+/home/joyce/projects/github/vim-markdown/syntax/markdown.vim
