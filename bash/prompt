@@ -3,6 +3,7 @@
 # WTFPL License ... cheers!
 
 source $conf/bash/prompt-base
+source $conf/bash/colors
 
 function setup_left_and_right {
   # Your customizations go here. The idea is to export $PS1_LEFT and $PS1_RIGHT
@@ -15,16 +16,6 @@ function setup_left_and_right {
 
   local exit_code=$?
   local job_pid=$!
-
-  text=$(tput sgr0)
-  black=$(tput setaf 0)
-  magenta=$(tput setaf 1)
-  green=$(tput setaf 2)
-  yellow=$(tput setaf 3)
-  blue=$(tput setaf 4)
-  rose=$(tput setaf 5)
-  cyan=$(tput setaf 6)
-  pink=$(tput setaf 7)
 
   export PS1_LEFT="$rose\h$magenta\W $text"
 
