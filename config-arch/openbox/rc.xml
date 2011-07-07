@@ -182,6 +182,25 @@
       </action>
     </keybind>
 
+    <keybind key='W-Prior'>
+      <action name='Execute'>
+        <command>amixer set Master 6%+</command>
+      </action>
+    </keybind>
+
+    <keybind key='W-Next'>
+      <action name='Execute'>
+        <command>amixer set Master 6%-</command>
+      </action>
+    </keybind>
+
+    <keybind key='W-z'>
+      <action name="Execute">
+        <command>amixer set Master toggle</command>
+      </action>
+    </keybind>
+
+    <!-- Terminal -->
     <keybind key="W-t">
       <action name="Execute">
         <startupnotify>
