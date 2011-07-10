@@ -19,7 +19,6 @@ set nojoinspaces
 set nowrap
 set number
 set ruler
-set runtimepath+=~/.vim/plugins/*
 set shiftwidth=2
 set showcmd
 set tabstop=2
@@ -38,7 +37,6 @@ nnoremap <C-h> :call TabSlideLeft()<CR>
 nnoremap <C-l> :call TabSlideRight()<CR>
 nnoremap <F7>  :call ToggleTerminalCopyPaste()<CR>
 
-com Helptags call GetHelpTags()
 com Ws :%s/\s\+$//
 
 filetype plugin on
@@ -83,13 +81,6 @@ function! TabSlideRight()
   exec "tabm " . current
 endfunction
 
-function! HelpTags()
-  let doc_dirs = filter(split(system('find ~/.vim/ | grep -e doc$'), '\n'), 'isdirectory(v:val)')
-  for dir in doc_dirs
-    exec "helptags" . dir
-  endfor
-endfunction
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "Plugins
@@ -98,8 +89,14 @@ endfunction
 "map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>  "Open in new tab
 map <C-\> :vsp<CR>:exec("tag ".expand("<cword>"))<CR>        "Open in vertical split
 
+"Fugitive
+map <F4> :Gblame<CR>
+
 "Nerdtree
 map <F2> :NERDTreeToggle<CR>
+
+"Pathogen
+call pathogen#runtime_append_all_bundles() 
 
 "Tlist
 map <F3> :TlistToggle<CR>
