@@ -2,6 +2,7 @@
 
 # Bash
 alias cpl="cp -d"
+alias count="ls | wc -l"
 alias l='ls -CF'
 alias la="ls -a"
 alias ll="ls -ilh"
