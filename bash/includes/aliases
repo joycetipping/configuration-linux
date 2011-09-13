@@ -13,6 +13,7 @@ alias rm="echo Use remove"
 alias s="ls"
 alias sudojt="sudo -u joycetipping"
 alias sus='sudo pm-suspend'
+alias timesync='sudo ntpdate time.nist.gov'
 alias u2="cd ../../"
 alias u3="cd ../../../"
 alias u4="cd ../../../../"
