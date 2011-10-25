@@ -4,8 +4,9 @@ export home="$HOME"
 export conf="$home/projects/configuration"
 
 # Set up symlinks
-ln -sf $conf/arch-config              $HOME/.config
 ln -sf $conf/conkyrc                  $HOME/.conkyrc
+ln -sf $conf/openbox/*                $HOME/.config/openbox/
+ln -sf $conf/terminal/terminalrc      $HOME/.config/Terminal/terminalrc
 
 ln -sf $conf/vim/vim                  $HOME/.vim
 ln -sf $conf/vim/vimrc                $HOME/.vimrc
@@ -23,7 +24,6 @@ ln -sf $conf/git/git-completion.bash  $home/bin/git-completion.bash
 ln -sf $conf/R                        $HOME/.R
 ln -sf $conf/texmf-var                $HOME/.texmf-var
 
-rm $HOME/.config/arch-config
 rm $HOME/.vim/vim
 rm $HOME/.R/R
 rm $HOME/.texmf-var/texmf-var

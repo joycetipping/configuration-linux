@@ -4,7 +4,7 @@
 # More information about this can be found at:
 # http://openbox.org/wiki/Help:Autostart
 
-~/projects/configuration/arch-config/openbox/setup-background                  # A wrapper for nitrogen
+~/.config/openbox/setup-background  # A wrapper for nitrogen
 obsetlayout 0 6 6 0                 # Set up virtual desktops
 
 synergys -c ~/.synergy.conf
