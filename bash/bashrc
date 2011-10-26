@@ -33,4 +33,6 @@ if [[ -f "$conf/bash/includes/foraker"   ]]; then source "$conf/bash/includes/fo
 if [[ -f "$conf/bash/includes/functions" ]]; then source "$conf/bash/includes/functions"; fi
 if [[ -f "$conf/bash/includes/programs"  ]]; then source "$conf/bash/includes/programs";  fi
 
+echo 'did you run yaourt -Syu today? ;)'
+
 true
