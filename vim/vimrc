@@ -38,6 +38,8 @@ nnoremap <C-l> :call TabSlideRight()<CR>
 nnoremap <F7>  :call ToggleTerminalCopyPaste()<CR>
 
 com Ws :%s/\s\+$//
+com Notepad :set wrap linebreak nolist
+com Code :set nowrap list
 
 filetype plugin on
 au BufRead,BufNewFile *.gnarly   set filetype=gnarly
