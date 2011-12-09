@@ -5,9 +5,9 @@ export conf="$home/projects/configuration"
 
 # Set up symlinks
 ln -sf $conf/conkyrc                  $HOME/.conkyrc
-if [[ ! -d .config ]]; then mkdir .config; fi
-if [[ ! -d .config/openbox ]]; then mkdir .config/openbox; fi
-if [[ ! -d .config/Terminal ]]; then mkdir .config/Terminal; fi
+if [[ ! -d $HOME/.config ]]; then mkdir $HOME/.config; fi
+if [[ ! -d $HOME/.config/openbox ]]; then mkdir $HOME/.config/openbox; fi
+if [[ ! -d $HOME/.config/Terminal ]]; then mkdir $HOME/.config/Terminal; fi
 ln -sf $conf/openbox/*                $HOME/.config/openbox/
 ln -sf $conf/terminal/terminalrc      $HOME/.config/Terminal/terminalrc
 
