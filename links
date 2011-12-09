@@ -7,7 +7,7 @@ export conf="$home/projects/configuration"
 ln -sf $conf/conkyrc                  $HOME/.conkyrc
 if [[ ! -d .config ]]; then mkdir .config; fi
 if [[ ! -d .config/openbox ]]; then mkdir .config/openbox; fi
-if [[ ! -d .config/Terminal]]; then mkdir .config/Terminal; fi
+if [[ ! -d .config/Terminal ]]; then mkdir .config/Terminal; fi
 ln -sf $conf/openbox/*                $HOME/.config/openbox/
 ln -sf $conf/terminal/terminalrc      $HOME/.config/Terminal/terminalrc
 
