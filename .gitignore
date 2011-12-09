@@ -1,5 +1,2 @@
 *.swp
 .netrwhist
-arch-config/google-chrome/
-arch-config/chromium/
-arch-config/dconf/user
