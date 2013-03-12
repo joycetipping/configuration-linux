@@ -1,9 +1,0 @@
-#!/bin/bash
-# Run under sudo
-
-# Enable mod rewrite and pretty permalinks
-a2enmod rewrite
-cp default /etc/apache2/sites-available/default
-
-# Restart Apache
-/etc/init.d/apache2 restart

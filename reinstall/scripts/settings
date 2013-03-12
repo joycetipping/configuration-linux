@@ -1,6 +1,0 @@
-#!/bin/bash
-
-# Run gconf settings
-cd $HOME/projects/configuration/gnome/
-./gconf apply
-cd

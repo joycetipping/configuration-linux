@@ -1,2 +1,0 @@
-#!/bin/bash
-nitrogen --set-zoom-fill ~/.config/openbox/background.jpg

@@ -1,9 +1,0 @@
-#!/bin/bash
-# Run under sudo
-
-# Aptitude no longer comes by default
-apt-get update
-apt-get install aptitude
-
-# Install essential packages
-aptitude install acpitool compizconfig-settings-manager git-core gnome-themes-extras htop openssh-server vim-gnome

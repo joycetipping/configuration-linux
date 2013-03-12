@@ -1,19 +1,22 @@
 # vim: syntax=sh :
 
 # Bash
+alias battery='ioreg -w0 -l | grep Capacity | cut -d " " -f 17-50'
 alias cpl="cp -d"
 alias count="ls | wc -l"
+alias ct="ctags -R"
 alias l='ls -CF'
 alias la="ls -a"
 alias ll="ls -ilh"
 alias ls="ls --color=auto"
 alias lst="ls -tr"
+alias now="date +%Y.%m%d.%H%M"
 alias remove="/bin/rm"
 alias rm="echo Use remove"
 alias s="ls"
 alias sudoasme="sudo -u joyce"
 alias sus='sudo pm-suspend'
-alias timesync='sudo ntpdate time.nist.gov'
+alias u="cd ../"
 alias u2="cd ../../"
 alias u3="cd ../../../"
 alias u4="cd ../../../../"
@@ -21,33 +24,24 @@ alias u5="cd ../../../../../"
 alias u6="cd ../../../../../../"
 alias u7="cd ../../../../../../../"
 alias u8="cd ../../../../../../../../"
-alias u="cd ../"
-alias uc="uml_mconsole"
-alias www='ssh spences7@spencertipping.com'
-alias xl='startx & logout'
 
 # Applications
 alias bc="echo Starting bc -l;echo;bc -l"
 alias brake="bundle exec rake"
-alias synmist="synergys -c $conf/synergy/mist.conf"
-alias gconftool="gconftool-2"
-alias luajit="luajit-2.0.0-beta2"
-alias net="wicd-curses"
-alias now="date +%Y.%m%d.%H%M"
-alias rename="perl-rename"
-alias sound="alsamixer"
 alias sqlite3="sqlite3 -column -header"
 alias sqlite="sqlite3 -column -header"
 alias vt="vim -t"
 
 # Places
 alias aliases="vim $conf/bash/includes/aliases"
+alias cdh="cd ~/home/"
 alias conf="cd $conf"
-alias dreams="vim $home/projects/dreams/$(date '+%Y').txt"
-alias journal="vim $home/projects/journal/$(date '+%Y')-$(date '+%m').txt"
-alias learn="cd $home/projects/learn"
-alias music="cd $home/library/music/playlists"
+alias dreams="vim $home/projects/life/dreams/$(date '+%Y').txt"
+alias journal="cd $home/projects/life/journal/"
+alias music="cd $home/library/music"
 alias musings="vim $home/projects/musings/2011.txt"
 alias notes="cd $home/projects/notes/"
-alias openbox="cd $conf/arch-config/openbox"
+alias programs="cd $home/projects/programs/"
+alias recipes="cd $home/projects/recipes/"
+alias safe="cd $home/projects/safe/"
 alias songs="cd $home/library/music/songs"

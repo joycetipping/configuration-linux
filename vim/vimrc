@@ -2,28 +2,34 @@
 
 colorscheme nightflower
 
-set autoindent
-set expandtab
-set foldcolumn=2
-set foldmethod=marker
-set hidden
-set hlsearch
-set ignorecase
-set incsearch
-set list
-set listchars=tab:\ \ ,trail:·
-set modeline
-set modelines=5
+"Keyboard and screen
 set mouse=a
-set nojoinspaces
 set nowrap
 set number
 set ruler
-set shiftwidth=2
 set showcmd
-set tabstop=2
-set tags=./tags;/
 set title
+"Editing
+set autoindent
+set expandtab
+set nojoinspaces
+set shiftwidth=2
+set tabstop=2
+"Search options
+set hlsearch
+set ignorecase
+set incsearch
+"Folds
+set foldcolumn=2
+set foldmethod=marker
+"Buffers
+set hidden
+"Highlight trailing whitespace
+set list
+set listchars=tab:\ \ ,trail:·
+"Modeline
+set modeline
+set modelines=5
 
 let mapleader = " "
 
@@ -37,14 +43,16 @@ nnoremap <C-h> :call TabSlideLeft()<CR>
 nnoremap <C-l> :call TabSlideRight()<CR>
 nnoremap <F7>  :call ToggleTerminalCopyPaste()<CR>
 
-com Ws :%s/\s\+$//
-com Notepad :set wrap linebreak nolist
-com Code :set nowrap list
+com Dws :%s/\s\+$// "Delete whitespace
+com Wpm call WordProcessorMode()
 
 filetype plugin on
-au BufRead,BufNewFile *.gnarly   set filetype=gnarly
-au BufRead,BufNewFile *.markdown set filetype=markdown
-au BufRead,BufNewFile *.scala    set filetype=scala
+autocmd BufRead,BufNewFile Gemfile set filetype=ruby
+autocmd BufRead,BufNewFile *.markdown,*.md set filetype=markdown
+autocmd BufRead,BufNewFile *.liquid set filetype=liquid
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Functions
 
 function! SyntaxItem()
   echo synIDattr(synID(line("."),col("."),1),"name")
@@ -83,13 +91,24 @@ function! TabSlideRight()
   exec "tabm " . current
 endfunction
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+function! WordProcessorMode()
+  setlocal formatoptions=1
+  setlocal formatprg=par
+  setlocal linebreak
+  setlocal nolist "Need to disable 'list' to enable 'linebreak'
+  setlocal wrap
+  map j gj
+  map k gk
+endfunction
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Plugins
 
 "Ctags
-"map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>  "Open in new tab
-map <C-\> :vsp<CR>:exec("tag ".expand("<cword>"))<CR>        "Open in vertical split
+set tags=./tags;/                                            "Check for tags file
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>  "Open in new tab
+"map <C-\> :vsp<CR>:exec("tag ".expand("<cword>"))<CR>        "Open in vertical split
 
 "Fugitive
 map <F4> :Gblame<CR>
@@ -98,13 +117,12 @@ map <F4> :Gblame<CR>
 map <F2> :NERDTreeToggle<CR>
 
 "Pathogen
-call pathogen#runtime_append_all_bundles() 
+call pathogen#runtime_append_all_bundles()
 
 "Tlist
 map <F3> :TlistToggle<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 "Special setups and operating systems
 
 "gVim on Windows
